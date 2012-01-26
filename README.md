@@ -10,7 +10,7 @@ $tpl->js = array('https://ajax.googleapis.com/ajax/libs/jquery/1/jquery.js',
 echo $tpl->render('hello.php', array('name' => 'Teks'));
 </pre>
 
-** Teks on Silex **
+## Teks on Silex
 Teks provide a Service Provider for the Silex micro framework
 
 <pre>...
@@ -24,5 +24,16 @@ $app->register(new Teks\SilexProvider, array(
         'css' => array('css/main.css', 'css/print.css' => /*media:*/ 'print')
         'js' = array('https://ajax.googleapis.com/ajax/libs/jquery/1/jquery.js', 
             'js/main.js');
-));</pre>
+));
 
+...
+
+$app->get('/hello_teks', function() use($app) { 
+    
+    return $app['teks']->render('hello.php', array(
+        'name' => 'Teks'
+    ));
+
+})
+
+...</pre>
