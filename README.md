@@ -45,3 +45,38 @@ $app->get('/hello_teks', function() use($app) {
 
 In any Teks template, the app variable refers to the Application object. So you 
 can access any services from within your view.
+
+
+## How the view looks like
+
+<pre>&lt;?php
+$this->title = 'Hello World!';
+$this->description = 'Hello description!';
+$this->canonical = 'http://example.com/hello';
+$this->js[] = 'js/something.js';
+?>
+&lt;div class=action>
+    &lt;h2>Action&lt;/h2>
+    &lt;p>Hello &lt;?php echo htmlspecialchars($name) ?>!&lt;/p>
+    &lt;?php echo $this->render('_partial.php') ?>
+&lt;/div></pre>
+
+## How the layouts look like
+
+<pre>&lt;!doctype html>
+&lt;html>
+&lt;head>
+
+&lt;?php echo $this->render('helpers/head.php') ?>
+
+&lt;/head>
+&lt;body>
+
+    &lt;div class=layout>
+        &lt;h1>Layout&lt;/h1>
+        &lt;?php echo $content ?>
+    &lt;/div>    
+
+&lt;?php echo $this->render('helpers/js.php') ?>
+&lt;/body>
+&lt;/html></pre>
