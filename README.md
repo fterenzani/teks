@@ -61,7 +61,7 @@ $this->js[] = 'js/something.js';
     &lt;?php echo $this->render('_partial.php') ?>
 &lt;/div></pre>
 
-## How the layouts look like
+## How the layout looks like
 
 <pre>&lt;!doctype html>
 &lt;html>
