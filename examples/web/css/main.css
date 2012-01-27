@@ -1,0 +1,21 @@
+body {
+  font: 16px arial, sans-serif;
+  color: #666;
+  margin: 8px;
+  padding: 0;
+}
+.layout, .action, .partial {
+  padding: 20px;
+}
+.layout {
+  background: green;
+  color: #fff;
+}
+.action {
+  background: #fff;
+  color: #666;
+}
+.partial {
+  background: red;
+  color: #fff;
+}
